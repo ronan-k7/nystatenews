@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const categories = [
+    { label: 'Home', category: '' },
     { label: 'Business', category: 'business' },
     { label: 'Sports', category: 'sports' },
     { label: 'Politics', category: 'politics' },
@@ -68,7 +69,7 @@ const CategoryNavbar = () => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
-                    gap: '28px',
+                    gap: '14px',
                     fontFamily: '"Poppins", "Segoe UI", sans-serif',
                     fontSize: '12.5px',
                     fontWeight: 700,
@@ -79,10 +80,10 @@ const CategoryNavbar = () => {
                 {categories.map((item) => (
                     <Link
                         key={item.category}
-                        href={`/${item.category}`}
+                        href={item.category === '' ? '/' : `/${item.category}`}
                         title={item.label}
                         style={{
-                            padding: '6px 10px',
+                            padding: '4px 6px',
                             color: '#000',
                             textDecoration: hovered === item.category ? 'underline' : 'none',
                             textUnderlineOffset: '5px',

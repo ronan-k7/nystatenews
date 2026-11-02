@@ -15,8 +15,9 @@ import AllFourCritics from "@/components/AllFourCritics";
 import HorizontalLessContent from "@/components/HorizontalLessContent";
 import ScrollingLessContent from "@/components/ScrollingLessContent";
 import SectionWrapper from "@/components/SectionWrapper";
+import CategoryNavbar from "@/components/CategoryNavbar";
 import AllMiniCards from "@/components/AllMiniCards";
-import NavbarWrapper from "@/components/NavbarWrapper";
+
 import Script from "next/script";
 import { getSortedNews, getNewsByCategory } from "@/utils/news";
 
@@ -108,7 +109,9 @@ export default function Home() {
       <div id="first-section">
         <FirstIndexSection data={sortedNews[0]} />
       </div>
-      <NavbarWrapper />
+      <div className="d-none d-lg-block">
+        <CategoryNavbar />
+      </div>
       <div className="container py-lg-5 py-3">
         <div id="todays-news">
             <div className="section-wrapper">
