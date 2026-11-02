@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
                   textAlign: 'justify',
                 }}
               >
-                Ny Statenews values reader trust. We collect only limited information necessary to operate our
+                c values reader trust. We collect only limited information necessary to operate our
                 newsroom, communicate with readers, and improve our journalism. This policy explains what we collect,
                 why we collect it, and how we protect it.
               </p>

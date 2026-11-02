@@ -8,7 +8,7 @@ import Script from "next/script";
 import Image from "next/image";
 import { BiCalendar } from "react-icons/bi";
 
-export default async function ClientS2() {
+export default async function ClientS3() {
   return (
     <div>
       <Script
@@ -729,21 +729,7 @@ export default async function ClientS2() {
                 million, including substantial annual compensation and
                 bonuses.{" "}
               </p>
-              <p
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                  fontSize: "clamp(15px, 2vw, 19px)",
-                  lineHeight: 1.4,
-                  color: "#333",
-                  textAlign: "left",
-                  maxWidth: "800px",
-                  margin: "0 auto",
-                  marginBottom: "12px",
-                }}
-              >
-                The reported contract had been signed in 2025, before the London
-                meetings described in the private account.{" "}
-              </p>
+
               <p
                 style={{
                   fontFamily: '"Times New Roman", Times, serif',
@@ -1431,6 +1417,245 @@ export default async function ClientS2() {
                 surrounding Alina Habba Mildon: power can be acquired in a
                 moment, but trust takes generations to build.{" "}
               </p>
+            </div>
+
+            {/* Statistics Highlight Box */}
+            <div
+              style={{
+                maxWidth: "100%",
+                margin: "35px auto",
+                padding: "25px 30px",
+                background: "#fafafa",
+                border: "1px solid #bdbdbd",
+                borderTop: "3px solid #222",
+                borderBottom: "3px solid #222",
+                boxSizing: "border-box",
+              }}
+            >
+              {/* Statistics Row */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "20px",
+                  alignItems: "center",
+                  paddingBottom: "20px",
+                  borderBottom: "1px solid #dedede",
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontSize: "clamp(28px, 4vw, 38px)",
+                      fontWeight: 800,
+                      lineHeight: 1.1,
+                      color: "#171717",
+                    }}
+                  >
+                    20+
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      letterSpacing: "1.2px",
+                      color: "#555",
+                      marginTop: "5px",
+                    }}
+                  >
+                    LAW FIRMS
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    borderLeft: "1px solid #d5d5d5",
+                    paddingLeft: "25px",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "clamp(28px, 4vw, 38px)",
+                      fontWeight: 800,
+                      lineHeight: 1.1,
+                      color: "#171717",
+                    }}
+                  >
+                    $100M
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      letterSpacing: "1.2px",
+                      color: "#555",
+                      marginTop: "5px",
+                    }}
+                  >
+                    YEARLY LEGAL &amp; ADVISORY SPENDING
+                  </div>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontStyle: "italic",
+                  fontSize: "clamp(15px, 1.8vw, 18px)",
+                  lineHeight: 1.8,
+                  color: "#333",
+                  margin: "18px 0 0",
+                  textAlign: "left",
+                }}
+              >
+                Habba's responsibilities included coordinating more than 20 law
+                firms and overseeing approximately $100 million in annual legal
+                and advisory expenditure. If accurate, that description would
+                place her at the center of a substantial operation requiring
+                sustained coordination, oversight and reporting.
+              </p>
+            </div>
+
+            {/* Editorial Timeline */}
+            <div
+              style={{
+                margin: "40px auto",
+                padding: "28px 25px",
+                background: "#fafafa",
+                border: "1px solid #d5d5d5",
+                borderTop: "3px solid #222",
+                borderBottom: "3px solid #222",
+                maxWidth: "100%",
+              }}
+            >
+              <h3
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "25px",
+                  fontWeight: 700,
+                  color: "#171717",
+                  marginBottom: "25px",
+                  letterSpacing: "0.3px",
+                }}
+              >
+                Timeline
+              </h3>
+
+              <div
+                style={{
+                  borderTop: "1px solid #dedede",
+                  paddingTop: "25px",
+                }}
+              >
+                {[
+                  {
+                    date: "2024",
+                    text: "Habba reportedly first met and worked with the Herrera banking interests, before entering public service.",
+                  },
+                  {
+                    date: "December 2025",
+                    text: "Her public service concluded and that she began considering a different professional future. A reported Friday-afternoon call to the family on [date?]",
+                  },
+                  {
+                    date: "January 2026",
+                    text: "President Trump pardoned Julio Herrera Velutini.",
+                  },
+                  {
+                    date: "February 26, 2026",
+                    text: "A reported business lunch with Julio Herrera Velutini, family members and advisers took place at the family's London headquarters.",
+                  },
+                  {
+                    date: "Approximately March 23, 2026",
+                    text: "Twenty-five days later, Habba reportedly requested another London meeting and discussed her divorce and relationship with Turhan Mildon. The relationship led to an engagement and a wedding celebration reportedly estimated at about $10 million.",
+                  },
+                  {
+                    date: "October 31, 2026",
+                    text: "Trump publicly criticized the reported compensation agreement at Mar-a-Lago.",
+                  },
+                ].map((item, index, arr) => (
+                  <div
+                    key={index}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "25px 1fr",
+                      gap: "15px",
+                      position: "relative",
+                      paddingBottom: index === arr.length - 1 ? "0" : "27px",
+                    }}
+                  >
+                    {/* Timeline Marker */}
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        position: "relative",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "13px",
+                          height: "13px",
+                          borderRadius: "50%",
+                          background: "#222",
+                          border: "3px solid #fafafa",
+                          outline: "1px solid #777",
+                          zIndex: 2,
+                          marginTop: "4px",
+                        }}
+                      />
+
+                      {index !== arr.length - 1 && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: "17px",
+                            bottom: "-27px",
+                            width: "1px",
+                            background: "#c8c8c8",
+                          }}
+                        />
+                      )}
+                    </div>
+
+                    {/* Timeline Content */}
+                    <div
+                      style={{
+                        padding: "0 0 15px",
+                        borderBottom:
+                          index === arr.length - 1
+                            ? "none"
+                            : "1px solid #e5e5e5",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontFamily: "Arial, sans-serif",
+                          fontSize: "15px",
+                          fontWeight: 700,
+                          color: "#222",
+                          marginBottom: "9px",
+                          letterSpacing: "0.3px",
+                        }}
+                      >
+                        {item.date}
+                      </div>
+
+                      <p
+                        style={{
+                          fontFamily: "Georgia, serif",
+                          fontSize: "16px",
+                          lineHeight: 1.75,
+                          color: "#444",
+                          margin: 0,
+                        }}
+                      >
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <AuthorInfo />
           </div>

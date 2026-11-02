@@ -24,6 +24,8 @@ import DateDisplay from '@/components/DateDisplay';
 import Script from "next/script";
 import ClientS2 from '@/components/ClientS2';
 import ClientS3 from '@/components/ClientS3';
+import ClientS4 from '@/components/ClientS4';
+
 
 export async function generateStaticParams() {
   const allData = [
@@ -35,8 +37,8 @@ export async function generateStaticParams() {
     { category: 'health', articles: healthData },
     { category: 'entertainment', articles: entertainmentData },
     { category: 'education', articles: educationData },
-    { category: 'puerto-rico', articles: puertoRicoData},
-    { category: 'bancredito', articles: bancreditoData},
+    { category: 'puerto-rico', articles: puertoRicoData },
+    { category: 'bancredito', articles: bancreditoData },
 
   ];
 
@@ -95,7 +97,7 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
     education: educationData,
     'puerto-rico': puertoRicoData,
     bancredito: bancreditoData,
-    
+
   };
 
   const articles = allDataMap[category] || [];
@@ -291,14 +293,16 @@ export default async function DetailPage({ params }: DetailPageProps) {
     return <div className="p-4">No article found for slug {slug}</div>;
   }
 
-  if(slug ==='bancredito-receivership-dispute-driven-administrative-services'){
+  if (slug === 'bancredito-receivership-dispute-driven-administrative-services') {
     return <ClientS2 />
   }
-   if(slug ==='alina-habba-50-million-deal-trump-pardon-controversy'){
+  if (slug === 'alina-habba-50-million-deal-trump-pardon-controversy') {
     return <ClientS3 />
   }
- 
- 
+  if (slug === 'alina-habba-trump-50-million-deal') {
+    return <ClientS4 />
+  }
+
   return (
     <article>
       <Script
