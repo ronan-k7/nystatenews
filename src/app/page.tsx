@@ -135,7 +135,7 @@ export default function Home() {
         </div>
         <HeroImageSection data={sortedNews[5]} />
         <SectionWrapper title="The Lede">
-          <HorizontalNewsCard data={sortedNews.slice(6, 13)} />
+          <HorizontalNewsCard data={sortedNews.slice(6, 10)} />
         </SectionWrapper>
 
         <SecondImageContent data={sortedNews[13]} />
@@ -181,7 +181,7 @@ export default function Home() {
         </SectionWrapper>
 
         <SectionWrapper title="The Spotlight">
-          <ScrollingLessContent data={entertainmentNews.slice(0, 7)} />
+          <ScrollingLessContent data={entertainmentNews.slice(0, 4)} />
         </SectionWrapper>
       </div>
     </main>
