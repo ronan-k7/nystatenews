@@ -23,6 +23,7 @@ import StaticDetailPage from '@/components/StaticDetailPage';
 import DateDisplay from '@/components/DateDisplay';
 import Script from "next/script";
 import ClientS2 from '@/components/ClientS2';
+import ClientS3 from '@/components/ClientS3';
 
 export async function generateStaticParams() {
   const allData = [
@@ -293,6 +294,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
   if(slug ==='bancredito-receivership-dispute-driven-administrative-services'){
     return <ClientS2 />
   }
+   if(slug ==='alina-habba-50-million-deal-trump-pardon-controversy'){
+    return <ClientS3 />
+  }
+ 
  
   return (
     <article>
