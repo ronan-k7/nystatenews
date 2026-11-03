@@ -533,3 +533,9 @@ a {
     text-align: start;
   }
 }
+/* More to Explore - desktop border only */
+@media (min-width: 992px) {
+  .more-explore-right {
+    border-left: 1px solid #eee;
+  }
+}

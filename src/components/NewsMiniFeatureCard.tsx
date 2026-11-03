@@ -38,8 +38,14 @@ const NewsMiniFeatureCard = ({ data }: NewsCardProps) => {
             {data.title}
           </p>
 
-          <div className="d-flex flex-row gap-2 align-items-start">
-            <div className="flex-grow-1">
+
+          <div
+            className="d-flex flex-row gap-3 align-items-stretch"
+          >
+            <div
+              className="flex-grow-1 d-flex flex-column justify-content-between"
+              style={{ minWidth: 0 }}
+            >
               <p
                 className="mb-2"
                 style={{
@@ -71,56 +77,29 @@ const NewsMiniFeatureCard = ({ data }: NewsCardProps) => {
               </div>
             </div>
 
-            {/* Mobile View */}
+            {/* Responsive Image */}
             <div
-              className="d-block d-sm-none"
-              style={{
-                width: '100px',
-                height: '100px',
-                overflow: 'hidden',
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src={data.image}
-             alt={data.title}
-            title={data.title}
-                width={100}
-                height={100}
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                  display: 'block',
-                }}
-              />
-            </div>
-
-            {/* Tablet and above */}
-            <div
-              className="d-none d-sm-block"
               style={{
                 width: '140px',
-                height: '140px',
-                overflow: 'hidden',
+                alignSelf: 'stretch',
                 flexShrink: 0,
+                overflow: 'hidden',
+                position: 'relative',
               }}
             >
               <Image
                 src={data.image}
-             alt={data.title}
-            title={data.title}
-                width={140}
-                height={140}
+                alt={data.title}
+                title={data.title}
+                fill
+                sizes="(max-width: 575px) 100px, 140px"
                 style={{
                   objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                  display: 'block',
                 }}
               />
             </div>
           </div>
+
         </div>
       </Link>
     </div>

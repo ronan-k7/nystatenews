@@ -2,6 +2,7 @@ import React from "react";
 import CategoryNavbar from "@/components/CategoryNavbar";
 import CatNewsFeatureCard from "@/components/CatNewsFeatureCard";
 import CardListCategoryPage from "@/components/CardListCategoryPage";
+import NewsCardWithCategory from "@/components/NewsCardWithCategory";
 import NewsMiniFeatureCard from "@/components/NewsMiniFeatureCard";
 import SectionWrapper from "@/components/SectionWrapper";
 import Script from "next/script";
@@ -198,16 +199,31 @@ export default async function CategoryPage({
         </SectionWrapper>
 
         <SectionWrapper title="More to Explore">
-          <div className="row">
-            <div className="col-12 col-lg-7">
-              {data.slice(5, 10).map((item, index, arr) => (
+          <div className="row g-0">
+            {/* Left column - items 5 & 6 */}
+            <div className="col-12 col-lg-6 pe-lg-5">
+              {[data[5], data[6]].map((item, index) => (
                 <div
                   key={index}
                   style={{
-                    borderBottom:
-                      index < arr.length - 1 ? "1px solid #ddd" : "none",
-                    paddingBottom: "24px",
-                    marginBottom: "24px",
+                    borderBottom: '1px solid #ddd',
+                    paddingBottom: '24px',
+                    marginBottom: '24px',
+                  }}
+                >
+                  <NewsMiniFeatureCard data={item} />
+                </div>
+              ))}
+            </div>
+            {/* Right column - items 7 & 8 */}
+            <div className="col-12 col-lg-6 ps-lg-5 mt-0 more-explore-right">
+              {[data[7], data[8]].map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    borderBottom: index === 0 ? '1px solid #ddd' : 'none',
+                    paddingBottom: '24px',
+                    marginBottom: '24px',
                   }}
                 >
                   <NewsMiniFeatureCard data={item} />

@@ -24,87 +24,101 @@ import { getSortedNews, getNewsByCategory } from "@/utils/news";
 
 export default function Home() {
   const sortedNews = getSortedNews();
-  const sportsNews = getNewsByCategory("sports");
-  const businessNews = getNewsByCategory("business");
-  const healthNews = getNewsByCategory("health");
-  const educationNews = getNewsByCategory("education");
-  const entertainmentNews = getNewsByCategory("entertainment");
-  const politicsNews = getNewsByCategory("politics");
-  const puertoRicoNews = getNewsByCategory("puerto-rico");
+
+  // Collect all slugs already displayed via sortedNews to avoid repeats in category sections
+  const usedSlugs = new Set<string>();
+  [
+    0, 5, 13, 20, 21, 22, 23, 28,
+    1, 2, 3, 4,          // slice(1,5)
+    6, 7, 8, 9,          // slice(6,10)
+    14, 15, 16, 17, 18, 19, // slice(14,20)
+    24, 25, 26, 27,      // slice(24,28)
+  ].forEach(i => { if (sortedNews[i]) usedSlugs.add(sortedNews[i].slug); });
+
+  const dedupe = (articles: ReturnType<typeof getNewsByCategory>) =>
+    articles.filter(a => !usedSlugs.has(a.slug));
+
+  const sportsNews = dedupe(getNewsByCategory("sports"));
+  const businessNews = dedupe(getNewsByCategory("business"));
+  const healthNews = dedupe(getNewsByCategory("health"));
+  const educationNews = dedupe(getNewsByCategory("education"));
+  const entertainmentNews = dedupe(getNewsByCategory("entertainment"));
+  const politicsNews = dedupe(getNewsByCategory("politics"));
+  const puertoRicoNews = dedupe(getNewsByCategory("puerto-rico"));
 
   return (
     <main>
-        <Script
-          id="structured-data-webpage"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                name: "Business,Politics, Technology, Health, Science, Sports, Entertainment, Education",
-                description:
-                  "Stay informed with the latest breaking news, global business trends, financial strategies, investment opportunities, and expert market analysis.",
-                url: "https://www.nystatenews.org",
-                speakable: {
-                  "@type": "SpeakableSpecification",
-                  cssSelector: ["h1"],
-                },
+      <Script
+        id="structured-data-webpage"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Business,Politics, Technology, Health, Science, Sports, Entertainment, Education",
+              description:
+                "Stay informed with the latest breaking news, global business trends, financial strategies, investment opportunities, and expert market analysis.",
+              url: "https://www.nystatenews.org",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["h1"],
               },
-              null,
-              2
-            ),
-          }}
-        />
+            },
+            null,
+            2
+          ),
+        }}
+      />
 
-        <Script
-          id="structured-data-organization"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@graph": [
-                  {
-                    "@type": "NewsMediaOrganization",
-                    "@id": "https://www.nystatenews.org/#organization",
-                    "name": "NY State News",
-                    "url": "https://www.nystatenews.org",
-                    "logo": {
-                      "@type": "ImageObject",
-                      "url": "https://www.nystatenews.org/images/nystatenews-logo.webp",
-                      "width": 600,
-                      "height": 91
-                    },
-                    "sameAs": [
-                      "https://x.com/NYSN_Official"
-                    ],
-                    "contactPoint": {
-                      "@type": "ContactPoint",
-                      "contactType": "General Inquiries",
-                      "email": "contact@nystatenews.org"
-                    },
-                    "publishingPrinciples": "https://www.nystatenews.org/editorial-policy/",
-                    "ethicsPolicy": "https://www.nystatenews.org/editorial-policy/",
-                    "correctionsPolicy": "https://www.nystatenews.org/corrections/"
+      <Script
+        id="structured-data-organization"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "NewsMediaOrganization",
+                  "@id": "https://www.nystatenews.org/#organization",
+                  "name": "NY State News",
+                  "url": "https://www.nystatenews.org",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.nystatenews.org/images/nystatenews-logo.webp",
+                    "width": 600,
+                    "height": 91
                   },
-                  {
-                    "@type": "WebSite",
-                    "@id": "https://www.nystatenews.org/#website",
-                    "url": "https://www.nystatenews.org/",
-                    "name": "NY State News",
-                    "description": "Nystate News delivers breaking headlines and expert analysis across politics, business, health, sports, science, entertainment, and education.",
-                    "publisher": {
-                      "@id": "https://www.nystatenews.org/#organization"
-                    }
+                  "sameAs": [
+                    "https://x.com/NYSN_Official"
+                  ],
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "General Inquiries",
+                    "email": "contact@nystatenews.org"
+                  },
+                  "publishingPrinciples": "https://www.nystatenews.org/editorial-policy/",
+                  "ethicsPolicy": "https://www.nystatenews.org/editorial-policy/",
+                  "correctionsPolicy": "https://www.nystatenews.org/corrections/"
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.nystatenews.org/#website",
+                  "url": "https://www.nystatenews.org/",
+                  "name": "NY State News",
+                  "description": "Nystate News delivers breaking headlines and expert analysis across politics, business, health, sports, science, entertainment, and education.",
+                  "publisher": {
+                    "@id": "https://www.nystatenews.org/#organization"
                   }
-                ]
-              }
-            ),
-          }}
-        />
+                }
+              ]
+            }
+          ),
+        }}
+      />
 
       <div id="first-section">
         <FirstIndexSection data={sortedNews[0]} />
@@ -114,24 +128,24 @@ export default function Home() {
       </div>
       <div className="container py-lg-5 py-3">
         <div id="todays-news">
-            <div className="section-wrapper">
-      {/* <hr style={{ borderTop: '1px solid #ccc' }} /> */}
-      
-      <p
-        className="section-title text-center"
-        style={{
-          color: "#000",
-          fontFamily: '"Cinzel", serif',
-          fontWeight: 400,
-          fontSize: '28px',
-          textTransform: 'uppercase',
-        }}
-      >
-        LATEST NEWS
-      </p>
+          <div className="section-wrapper">
+            {/* <hr style={{ borderTop: '1px solid #ccc' }} /> */}
 
-     
-    </div>
+            <p
+              className="section-title text-center"
+              style={{
+                color: "#000",
+                fontFamily: '"Cinzel", serif',
+                fontWeight: 400,
+                fontSize: '28px',
+                textTransform: 'uppercase',
+              }}
+            >
+              LATEST NEWS
+            </p>
+
+
+          </div>
           <SectionWrapper title="">
             <HorizontalNewsCard data={sortedNews.slice(1, 5)} />
           </SectionWrapper>
@@ -175,9 +189,9 @@ export default function Home() {
           <TrumpCards data={educationNews.slice(0, 4)} />
         </SectionWrapper>
 
-        <SectionWrapper title="Politics">
+        {/* <SectionWrapper title="Politics">
           <HorizontalNewsCard data={politicsNews.slice(0, 4)} />
-        </SectionWrapper>
+        </SectionWrapper> */}
 
         <SectionWrapper title="Puerto Rico">
           <AllMiniCards data={puertoRicoNews.slice(0, 4)} />
