@@ -73,7 +73,12 @@ const NewsCard = ({ data }: NewsCardProps) => {
                 fontSize: 'clamp(18px, 2vw, 22px)',
                 fontWeight: 400,
                 marginBottom: '8px',
-                marginTop: '0'
+                marginTop: '0',
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}
               className='hover-underline'
             >
@@ -88,6 +93,11 @@ const NewsCard = ({ data }: NewsCardProps) => {
                 fontSize: 'clamp(14px, 1.5vw, 17px)',
                 fontWeight: 400,
                 marginBottom: '4px',
+                display: '-webkit-box',
+                WebkitLineClamp: 4,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}
             >
               {data.shortdescription}
