@@ -1419,6 +1419,53 @@ export default async function ClientS3() {
               </p>
             </div>
 
+            {/* Key Topics & Hashtags Section */}
+            <div
+              style={{
+                maxWidth: "800px",
+                margin: "24px auto 28px",
+                padding: "16px 0",
+                borderTop: "1px solid #e6e6e6",
+                borderBottom: "1px solid #e6e6e6",
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              {[
+                "Alina Habba",
+                "Alina Habba Mildon",
+                "Donald J. Trump",
+                "Julio Herrera Velutini",
+                "Herrera Velutini Family",
+                "Concord Partners",
+                "Isabela Herrera",
+                "Turhan Mildon",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: "4px 11px",
+                    fontSize: "11.5px",
+                    fontFamily: '"Poppins", "Segoe UI", Arial, sans-serif',
+                    fontWeight: 500,
+                    color: "#333",
+                    backgroundColor: "#f7f7f7",
+                    border: "1px solid #e2e2e2",
+                    borderRadius: "20px",
+                    letterSpacing: "0.2px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  <span style={{ color: "#DB3334", fontWeight: 700, marginRight: "3px" }}>#</span>
+                  {tag}
+                </span>
+              ))}
+            </div>
+
             {/* Statistics Highlight Box */}
             <div
               style={{
