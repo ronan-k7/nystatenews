@@ -777,6 +777,46 @@ export default async function ClientS3() {
                 substantial private compensation and a presidential pardon
                 generated significant public scrutiny.{" "}
               </p>
+              <figure
+                style={{
+                  maxWidth: "800px",
+                  margin: "28px auto 24px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "3 / 2",
+                    overflow: "hidden",
+                    backgroundColor: "#f2f2f2",
+                  }}
+                >
+                  <Image
+                    src="/images/alina-habba-mildon-trump-pardon-controversy.jpg"
+                    alt="Alina Habba Mildon, former senior adviser to President Donald J. Trump"
+                    title="Alina Habba Mildon"
+                    fill
+                    sizes="(max-width: 992px) 100vw, 800px"
+                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                  />
+                </div>
+                <figcaption
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "13px",
+                    fontStyle: "italic",
+                    lineHeight: 1.5,
+                    color: "#666",
+                    marginTop: "10px",
+                    paddingBottom: "10px",
+                    borderBottom: "1px solid #e6e6e6",
+                  }}
+                >
+                  Alina Habba Mildon pictured amid scrutiny over a reported $50 million deal.
+                </figcaption>
+              </figure>
+
               <p
                 style={{
                   fontFamily: '"Times New Roman", Times, serif',
@@ -1416,6 +1456,132 @@ export default async function ClientS3() {
                 surrounding Alina Habba Mildon: power can be acquired in a
                 moment, but trust takes generations to build.{" "}
               </p>
+            </div>
+
+            {/* Sources Section */}
+            <div
+              style={{
+                maxWidth: "800px",
+                margin: "24px auto 0",
+              }}
+            >
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                  padding: "10px 16px",
+                  backgroundColor: "#fafafa",
+                  border: "1px solid #e5e5e5",
+                  borderRadius: "10px",
+                  boxShadow: "0 1px 2px rgba(0, 0, 0, 0.03)",
+                }}
+              >
+                {/* Red newspaper icon */}
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#c5221f"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ flexShrink: 0 }}
+                  aria-hidden="true"
+                >
+                  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                  <path d="M18 14h-8" />
+                  <path d="M15 18h-5" />
+                  <path d="M10 6h8v4h-8V6Z" />
+                </svg>
+
+                <span
+                  style={{
+                    fontFamily: '"Georgia", serif',
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    color: "#111",
+                    letterSpacing: "0.2px",
+                  }}
+                >
+                  Sources:
+                </span>
+
+                {/* The New York Times link */}
+                <a
+                  href="https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  style={{
+                    fontFamily: '"Georgia", serif',
+                    fontSize: "15px",
+                    color: "#222",
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                    textDecorationColor: "#ccc",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}
+                >
+                  The New York Times
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#888"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+
+                {/* Dot separator */}
+                <span style={{ color: "#bbb", fontSize: "14px", userSelect: "none" }}>•</span>
+
+                {/* GV Wire link */}
+                <a
+                  href="https://gvwire.com/2026/11/10/alina-habba-mildon-loses-50-million-contract-that-enraged-trump/"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  style={{
+                    fontFamily: '"Georgia", serif',
+                    fontSize: "15px",
+                    color: "#222",
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                    textDecorationColor: "#ccc",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}
+                >
+                  GV Wire
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#888"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
             {/* Key Topics & Hashtags Section */}
