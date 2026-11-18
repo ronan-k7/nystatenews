@@ -63,6 +63,7 @@ interface NewsItem {
   date: string;
   author?: string;
   twitter?: string;
+  sources?: Array<{ name: string; url: string }>;
 }
 
 interface DetailPageProps {

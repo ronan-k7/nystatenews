@@ -19,6 +19,7 @@ export interface NewsArticle {
   shortdescription?: string;
   description?: string;
   author?: string;
+  sources?: Array<{ name: string; url: string }>;
 }
 
 const allNews: NewsArticle[] = [
